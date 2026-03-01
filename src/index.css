@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+*{
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: rgb(5, 5, 213);
+
+  --border-color: #e5e7eb;
+  
+}
+
+/* Loading Screen */
+.loading-screen {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  gap: 1rem;
+}
+
+.spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid var(--border-color);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
