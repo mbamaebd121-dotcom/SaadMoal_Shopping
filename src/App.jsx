@@ -1,25 +1,32 @@
-
-
-import Header from "./components/Header"
-import Layaout from "./components/Layaout"
-import Sidebar from "./components/Sidebar"
-import Footer from "./components/Footer"
+import { Routes, Route, Navigate } from "react-router-dom";
+import { useAuth } from "./hooks/useAuth";
+import Login from "./pages/Login";
+import SignUp from "./pages/SignUp";
+import MainLayout from "./components/Layaout";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
-  
+  const { session } = useAuth();
 
   return (
-    <>
-    <div className="app">
-      <Header/>
-      <Sidebar/>
-      <Layaout/>
-      <Footer/>
-      
-    </div>
+    <Routes>
 
-    </>
-  )
+      {/* صفحات عامة */}
+      <Route path="/login" element={<Login />} />
+      <Route path="/signup" element={<SignUp />} />
+
+      {/* صفحات محمية */}
+      <Route
+        path="/*"
+        element={
+          <ProtectedRoute session={session}>
+            <MainLayout />
+          </ProtectedRoute>
+        }
+      />
+
+    </Routes>
+  );
 }
 
-export default App
+export default App;

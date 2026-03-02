@@ -36,7 +36,7 @@ function Login() {
 
 
   return (
-    <div className="login h-screen flex flex-col justify-center items-center relative">
+    <div className="login h-screen flex flex-col justify-center items-center relative bg-gray-100">
       <form
         onSubmit={(e) => {
           e.preventDefault();
@@ -75,7 +75,7 @@ function Login() {
           <p>ليس لدي حساب ؟</p>
           <p
             className="text-blue-800 cursor-pointer"
-            onClick={() => navigate("/sign-up")}
+            onClick={() => navigate("/signup")}
           >
             {" "}
             إنشاء حساب

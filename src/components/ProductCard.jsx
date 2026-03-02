@@ -1,5 +1,5 @@
 
-function ProductsCard({image_url,name,description,price}) {
+function ProductCard({image_url,name,description,price}) {
   return (
     <>
               <div className="card product w-50 bg-white shadow rounded-b-2xl">
@@ -25,4 +25,4 @@ function ProductsCard({image_url,name,description,price}) {
   )
 }
 
-export default ProductsCard
+export default ProductCard

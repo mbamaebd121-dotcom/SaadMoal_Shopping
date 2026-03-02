@@ -113,15 +113,27 @@ if (uploadError) {
           }}
           className="border p-2 w-full resize-none overflow-hidden focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
         />
-
-        {/* السعر */}
+        
+                  {/* السعر */}
         <input
-          type="number"
+          type="text"
           placeholder="السعر"
           value={price}
           onChange={(e) => setPrice(e.target.value)}
           className="border p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
         />
+                {/* الكمية */}
+        <input
+          type="text"
+          placeholder="الكمية"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+          className="border p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
+        />
+
+       
+
+
 
         {/* اختيار صورة */}
         <div className="border-2 border-dotted border-blue-800 p-4 rounded-lg text-center">
