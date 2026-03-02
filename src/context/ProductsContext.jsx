@@ -26,7 +26,7 @@ const ProductsContextProvider = ({ children }) => {
     };
 
     fetchData();
-  }, []);
+  }, [products]);
 
   // functions
 

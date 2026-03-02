@@ -29,7 +29,7 @@ console.log(profile);
 
     </div>
         <div 
-    className={`sidebar  bg-white flex-col
+    className={`sidebar border-l-4 border-blue-800 bg-white flex-col
        px-10 h-screen fixed  left-0 
         top-0 lg:top-16 w-70 z-50 border-t 
         lg:translate-x-0 
@@ -129,9 +129,9 @@ console.log(profile);
       <div className="sidebar-footer  mt-3 flex flex-col gap-7   ">
         <div className="info-user flex flex-col gap-1">
           {!profile?.name ? (
-            <h1>مرحبا زائر</h1>
+            <h1>مرحبا, زائر</h1>
           ):(
-          <h3 className="text-blue-800 font-bold">مرحبا {profile?.name}</h3>
+          <h3 className="text-blue-800 font-bold"><span className="text-black">مرحبا</span> , {profile?.name}</h3>
 
 
           )}
