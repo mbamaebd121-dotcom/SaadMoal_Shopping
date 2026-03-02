@@ -4,6 +4,7 @@ import About from "../pages/About";
 import Products from "../pages/Products";
 import Cart from "../pages/Cart";
 import ProductAddForm from "../pages/ProductAddForm";
+import MyOrders from "../pages/MyOrders";
 
 function AppRoutes() {
   return (
@@ -14,6 +15,7 @@ function AppRoutes() {
         <Route path="/products" element={<Products />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/productAddForm" element={<ProductAddForm />} />
+        <Route path="/myOrders" element={<MyOrders />} />
       </Routes>
     </div>
   );

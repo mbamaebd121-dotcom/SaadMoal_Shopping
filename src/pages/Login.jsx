@@ -35,7 +35,7 @@ function Login() {
 }
 
 
-  return (
+return (
     <div className="login h-screen flex flex-col justify-center items-center relative bg-gray-100">
       <form
         onSubmit={(e) => {

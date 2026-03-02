@@ -7,7 +7,9 @@ function ProductAddForm() {
   const [name, setName] = useState("")
   const [description, setDescription] = useState("")
   const [price, setPrice] = useState("")
+  const [stock,setStock] = useState("");
   const [file, setFile] = useState(null)
+
   const [preview, setPreview] = useState(null)
   const [loading, setLoading] = useState(false)
   const {fetchData} = useProducts();
@@ -59,6 +61,7 @@ if (uploadError) {
           name,
           description,
           price,
+          stock,
           image_url: imageUrl
         }
       ])
@@ -67,10 +70,11 @@ if (uploadError) {
       console.log(insertError)
   alert(insertError.message)
     } else {
-      alert("تمت الإضافة بنجاح ✅")
+      
       setName("")
       setDescription("")
       setPrice("")
+      setStock("")
       setFile(null)
       setPreview(null)
       fetchData();
@@ -126,8 +130,8 @@ if (uploadError) {
         <input
           type="text"
           placeholder="الكمية"
-          value={price}
-          onChange={(e) => setPrice(e.target.value)}
+          value={stock}
+          onChange={(e) => setStock(e.target.value)}
           className="border p-2 w-full focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
         />
 
