@@ -1,5 +1,6 @@
 import { useState,useRef } from "react"
 import { supabase } from "../supabase"
+import { useNavigate } from "react-router-dom"
 
 function ProductAddForm() {
   const [name, setName] = useState("")
@@ -8,6 +9,7 @@ function ProductAddForm() {
   const [file, setFile] = useState(null)
   const [preview, setPreview] = useState(null)
   const [loading, setLoading] = useState(false)
+  const navigate = useNavigate();
 
   const textareaRef = useRef(null)
 
@@ -69,6 +71,7 @@ if (uploadError) {
       setPrice("")
       setFile(null)
       setPreview(null)
+      navigate('/products');
     }
 
     setLoading(false)
