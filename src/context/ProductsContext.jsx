@@ -13,24 +13,48 @@ const ProductsContextProvider = ({ children }) => {
 
 
   useEffect(() => {
-    fetchData();
+    fetchProducts();
   }, []);
+  useEffect(() => {
+  const channel = supabase
+    .channel("products-realtime")
+    .on(
+      "postgres_changes",
+      {
+        event: "INSERT",
+        schema: "public",
+        table: "products",
+      },
+      (payload) => {
+        console.log("New product:", payload.new);
+
+        setProducts((prev) => [payload.new, ...prev]);
+      }
+    )
+    .subscribe();
+
+  return () => {
+    supabase.removeChannel(channel);
+  };
+}, []);
 
   // functions
-      const fetchData = async () => {
-        setLoading(true);
-      const { data, error } = await supabase.from("products").select();
-      if (data) {
-        setProducts(data);
+  const fetchProducts = async () => {
+  setLoading(true);
 
-      }
-      if (error) {
-        setError(error.message)
-      }
-      setLoading(false)
-    };
+  const { data, error } = await supabase
+    .from("products")
+    .select()
+    .order("id", { ascending: false });
 
+  if (error) {
+    setError(error.message);
+  } else {
+    setProducts(data);
+  }
 
+  setLoading(false);
+};
   const activeSideBar = () => {
     setStateSidebar(!stateSidebar);
   };
@@ -45,7 +69,7 @@ const ProductsContextProvider = ({ children }) => {
     setLoading,
     error,
     setError,
-    fetchData
+    fetchProducts
   };
 
   return (
