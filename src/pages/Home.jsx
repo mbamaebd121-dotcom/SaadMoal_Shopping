@@ -28,6 +28,8 @@ function Home() {
               name={item.name}
               description={item.description}
               price={item.price}
+              is_active={item.is_active}
+              
               />
             ))
           }
