@@ -1,7 +1,15 @@
-function ProductCard({ image_url, name, description, price }) {
+function ProductCard({ image_url, name, description, price,is_active }) {
+  
   return (
     <>
       <div className="card product w-60 h-90 bg-white shadow rounded-b-2xl relative">
+        <div className="avalible absolute left-1 top-0">
+          {is_active ? (
+            <p className="bg-blue-800 py-1 px-3 rounded-2xl text-white">متوفر</p>
+          ):(
+            <p  className="bg-red-800 py-1 px-3 rounded-2xl text-white">غير متوفر</p>
+          )}
+        </div>
         <div className="header-card ">
           {image_url ? (
             <img src={image_url} className="w-60 h-40 " />
