@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/immutability */
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useEffect, useState } from "react";
 import { supabase } from "../supabase";
@@ -12,7 +13,11 @@ const ProductsContextProvider = ({ children }) => {
 
 
   useEffect(() => {
-    const fetchData = async () => {
+    fetchData();
+  }, []);
+
+  // functions
+      const fetchData = async () => {
         setLoading(true);
       const { data, error } = await supabase.from("products").select();
       if (data) {
@@ -25,10 +30,6 @@ const ProductsContextProvider = ({ children }) => {
       setLoading(false)
     };
 
-    fetchData();
-  }, [products]);
-
-  // functions
 
   const activeSideBar = () => {
     setStateSidebar(!stateSidebar);
@@ -43,7 +44,8 @@ const ProductsContextProvider = ({ children }) => {
     loading,
     setLoading,
     error,
-    setError
+    setError,
+    fetchData
   };
 
   return (
