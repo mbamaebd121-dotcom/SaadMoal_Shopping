@@ -5,7 +5,7 @@ import { profileService } from "../services/profileService"
 
 export const AuthContext = createContext()
 
-export function AuthProvider({ children }) {
+const AuthProvider = ({ children })=> {
 
   const [session, setSession] = useState(null)
   const [profile, setProfile] = useState(null)
@@ -52,3 +52,5 @@ useEffect(() => {
     </AuthContext.Provider>
   )
 }
+
+export default AuthProvider

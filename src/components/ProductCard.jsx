@@ -1,4 +1,9 @@
-function ProductCard({ image_url, name, description, price,is_active }) {
+/* eslint-disable no-unused-vars */
+import { useCart } from "../hooks/useCart";
+
+function ProductCard({ image_url, name, description, price,is_active,id }) {
+
+  const {handelerAddTocart} = useCart();
   
   return (
     <>
@@ -43,7 +48,9 @@ function ProductCard({ image_url, name, description, price,is_active }) {
 
           
           
-          <div className="btnAdd cursor-pointer rounded bg-orange-600 w-10 text-white text-center">
+          <div className="btnAdd cursor-pointer rounded bg-orange-600 w-10 text-white text-center"
+          onClick={()=>handelerAddTocart(name,image_url,description,price,id)}
+          >
             <i class="fa-solid fa-plus"></i>
           </div>
         </div>

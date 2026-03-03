@@ -1,11 +1,10 @@
-import { useContext } from "react";
-import { ProductsContext } from "../context/ProductsContext";
+import { useProducts } from "../hooks/useProducts";
 import Loading from "./Loading";
 import ProductCard from "../components/ProductCard";
 import { useNavigate } from "react-router-dom";
 
 function Products() {
-  const { products,loading,error } = useContext(ProductsContext);
+  const { products,loading,error } = useProducts();
   const navigate = useNavigate();
   if(loading) return <Loading/>
   if(error) return <div className="container-errpr h-screen flex items-center justify-center">
@@ -35,6 +34,7 @@ function Products() {
           description={item.description}
           price={item.price}
           is_active={item.is_active}
+          id={item.id}
           />
 
         ))}
