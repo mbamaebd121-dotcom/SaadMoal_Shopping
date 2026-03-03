@@ -1,25 +1,40 @@
+import { useCart } from "../hooks/useCart";
+
 function OrderSummary() {
+  const {carts} = useCart();
+    const totalCart = carts.reduce((total, item) => {
+  return total + item.price * item.quantity;
+}, 0);
+
   return (
-    <div className="space-y-4">
-      <h2 className="text-xl font-bold">ملخص الطلب</h2>
 
-      <div className="flex justify-between">
-        <span>منتج 1</span>
-        <span>$50</span>
+    <>
+    <div className="container flex flex-col gap-3">
+      <div className="title font-bold">
+        ملخص الطلب
       </div>
+      <div className="container-item">
+        <ul className="flex flex-col gap-2">
+                  {carts.map((item,index)=>(
+                    <li key={index} className="flex justify-between text-sm">
+                      <p className="w-50">{item.name}</p>
+                      <p className="w-10">{item.quantity}</p>
+                      <p className="w-20">{item.price}</p>
+                    </li>
+          
+        ))}
 
-      <div className="flex justify-between">
-        <span>الشحن</span>
-        <span>$5</span>
+        </ul>
+
+
       </div>
-
-      <hr />
-
-      <div className="flex justify-between font-bold text-lg">
-        <span>الإجمالي</span>
-        <span>$55</span>
-      </div>
+              <div className="total border-t flex items-center justify-between">
+          <p>الإجمالي</p>
+          <p>{totalCart}</p>
+        </div>
     </div>
+    </>
+
   );
 }
 

@@ -1,11 +1,27 @@
 import CartItem from "../components/CartItem";
 import { useCart } from "../hooks/useCart";
+import {useAuth} from '../hooks/useAuth';
+import { useNavigate } from "react-router-dom";
+
+
 
 function Cart() {
   const {carts,removeAllInCart} = useCart();
+  const {session} = useAuth();
+  const navigate = useNavigate();
   const totalCart = carts.reduce((total, item) => {
   return total + item.price * item.quantity;
 }, 0);
+
+const goToCheckOut = ()=>{
+  if(session){
+    navigate('/checkOut');
+  }
+  else{
+    alert('يرجى تسجيل الدخول للمتابعة لصفحة الدفع !')
+    navigate('/login')
+  }
+}
 
   return (
     <div className="flex flex-col  h-screen">
@@ -44,7 +60,9 @@ function Cart() {
             <span>الإجمالي</span>
             <p>{totalCart}</p>
           </div>
-          <div className="btngoCheckOut rounded text-center w-70 md:w-full p-2 transition duration-500 bg-orange-600 hover:bg-orange-700 text-white cursor-pointer">
+          <div className="btngoCheckOut rounded text-center w-70 md:w-full p-2 transition duration-500 bg-orange-600 hover:bg-orange-700 text-white cursor-pointer"
+          onClick={()=>goToCheckOut()}
+          >
             إكمال عملية الدفع
           </div>
           </div>
