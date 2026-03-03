@@ -58,7 +58,7 @@ const goToCheckOut = ()=>{
       </div>
 
       {/* الإجمالي + زر الدفع */}
-      <div className="p-4 bg-white shadow-md">
+      <div className="p-4 bg-white shadow-md ">
         <div className="flex justify-between mb-3">
           <span>الإجمالي</span>
           <p>{totalCart}</p>
