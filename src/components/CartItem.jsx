@@ -1,11 +1,13 @@
 import { useCart } from "../hooks/useCart";
 
 function CartItem({ name, image_url, description, price, quantity, id }) {
-  const { incrementQuntity, decrementQuntity } = useCart();
+  const { removeItemInCart,incrementQuntity, decrementQuntity } = useCart();
 
   return (
     <div className="card-item bg-white w-70 md:w-full pt-1 p-2 relative">
-      <div className="btn-remove absolute top-0 hover:text-red-600 cursor-pointer">
+      <div className="btn-remove absolute top-0 hover:text-red-600 cursor-pointer"
+      onClick={()=>removeItemInCart(id)}
+      >
         <i class="fa-solid fa-trash"></i>
       </div>
       <div className="info-section ">

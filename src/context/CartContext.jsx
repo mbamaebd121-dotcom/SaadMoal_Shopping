@@ -8,6 +8,10 @@ const CartContextProvider = ({ children }) => {
   const [carts, setCarts] = useState([]);
 
   // functions
+
+  //-------------------//
+  //----- add To Cart---//
+  //-------------------//
   const handelerAddTocart = (name, image_url, description, price, id) => {
     setCarts((prev) => {
       const existingItem = prev.find((item) => item.id === id);
@@ -31,6 +35,16 @@ const CartContextProvider = ({ children }) => {
       ];
     });
   };
+
+    //-------------------//
+  //----- Remov in The Cart ---//
+  //-------------------//
+
+  const removeItemInCart = (id)=>{
+    const filterCart = carts.filter(item=>item.id !== id);
+    setCarts(filterCart);
+  }
+
   //-------------------//
   //----- + Quantity ---//
   //-------------------//
@@ -54,12 +68,22 @@ const CartContextProvider = ({ children }) => {
      )) 
   };
 
+    //-------------------//
+  //----- removeAll---//
+  //-------------------//
+
+  const removeAllInCart = ()=>{
+    setCarts([]);
+  }
+
   const value = {
     carts,
     setCarts,
     handelerAddTocart,
+    removeItemInCart,
     incrementQuntity,
-    decrementQuntity
+    decrementQuntity,
+    removeAllInCart
   };
   return <CartContext.Provider value={value}>{children}</CartContext.Provider>;
 };

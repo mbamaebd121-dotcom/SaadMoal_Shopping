@@ -2,7 +2,7 @@ import CartItem from "../components/CartItem";
 import { useCart } from "../hooks/useCart";
 
 function Cart() {
-  const {carts} = useCart();
+  const {carts,removeAllInCart} = useCart();
   const totalCart = carts.reduce((total, item) => {
   return total + item.price * item.quantity;
 }, 0);
@@ -15,8 +15,14 @@ function Cart() {
           <i class="fa-solid fa-cart-shopping text-blue-800"></i>
         </div>
       ) : (
-        <div className="container flex  flex-col gap-5">
-          <div className="tiltle text-center">السلة</div>
+        <div className="container flex relative flex-col gap-5">
+          <div className="tiltle text-center ">السلة</div>
+          <div className="removAllItemInCart absolute left-0 top-2 flex items-center gap-2 cursor-pointer bg-red-700 rounded-2xl py-1 px-2 text-white"
+          onClick={()=>removeAllInCart()}
+          >
+            <p>إفراغ السلة</p>
+            <i class="fa-solid fa-trash-can "></i>
+          </div>
           <div className="container-items min-h-50 md:flex flex-col  grid justify-center gap-2">
             {carts.map((item,index)=>(
               <CartItem 
