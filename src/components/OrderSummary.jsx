@@ -9,11 +9,11 @@ function OrderSummary() {
   return (
 
     <>
-    <div className="container flex flex-col gap-3">
+    <div className="container flex flex-col w-80 shadow-md bg-white p-3 gap-3 md:w-120">
       <div className="title font-bold">
         ملخص الطلب
       </div>
-      <div className="container-item">
+      <div className="container-item ">
         <ul className="flex flex-col gap-2">
                   {carts.map((item,index)=>(
                     <li key={index} className="flex justify-between text-sm">
@@ -28,7 +28,7 @@ function OrderSummary() {
 
 
       </div>
-              <div className="total border-t flex items-center justify-between">
+              <div className="total border-t mt-10 flex items-center justify-between">
           <p>الإجمالي</p>
           <p>{totalCart}</p>
         </div>
