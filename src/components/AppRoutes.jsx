@@ -18,8 +18,6 @@ function AppRoutes() {
         <Route path="/productAddForm" element={<ProductAddForm />} />
         <Route path="/myOrders" element={<MyOrders />} />
         <Route path="/checkOut" element={<Checkout />} />
-
-
       </Routes>
     </div>
   );

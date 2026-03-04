@@ -1,8 +1,10 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useReducer, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 export const CheckOutContext = createContext({});
 const CheckOutProvider = ({ children }) => {
+  const navigate = useNavigate();
   //Reducer
 
   const handlerCheckOutForm = (state,action)=>{
@@ -23,9 +25,36 @@ const CheckOutProvider = ({ children }) => {
   const [phoneN, setPhoneN] = useState("");
   const [address, setAddress] = useState("");
 
-  // state Pay away
+  // state Card
+  const [nameCard,setNameCard] = useState('');
+  const [numberCard,setNumberCard] = useState('');
+  const [expiry,setExpiry] = useState('');
+  const [cvv,setCvv] = useState('');
 
-  const [payAway,setPayAway] = useState('');
+  // functions
+
+  const handlerCheckComplatePay = ()=>{
+    if(
+      !name.trim() || !phoneN.trim() || !address.trim() || !nameCard.trim() || 
+      !numberCard.trim() || !expiry.trim() || !cvv.trim() 
+    ){
+      return alert('يرجئ إدخال كل المعلومات للمتابعة');
+
+    }
+    else{
+      setName('')
+      setPhoneN('')
+      setAddress('')
+      setNameCard('')
+      setNumberCard('')
+      setExpiry('')
+      setCvv('')
+      navigate('/myOrders')
+
+
+    }
+
+  }
 
   const value = {
     name,
@@ -34,10 +63,17 @@ const CheckOutProvider = ({ children }) => {
     setAddress,
     phoneN,
     setPhoneN,
-    payAway,
-    setPayAway,
+    nameCard,
+    setNameCard,
+    numberCard,
+    setNumberCard,
+    expiry,
+    setExpiry,
+    cvv,
+    setCvv,
     stepNumber,
-    dispatch
+    dispatch,
+    handlerCheckComplatePay
 
   };
   return (
