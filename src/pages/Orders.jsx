@@ -1,4 +1,4 @@
-function MyOrders() {
+function Orders() {
   return (
     <>
       <div className="myorder flex flex-col  gap-3">
@@ -36,4 +36,4 @@ function MyOrders() {
   );
 }
 
-export default MyOrders;
+export default Orders;

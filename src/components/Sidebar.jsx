@@ -27,9 +27,9 @@ function Sidebar() {
         onClick={activeSideBar}
       ></div>
       <div
-        className={`sidebar border-l-4 border-blue-800 bg-white flex-col
-       px-10 h-screen fixed  left-0 
-        top-0 lg:top-16 w-70 z-50 border-t 
+        className={`sidebar  bg-white flex-col
+        h-screen fixed  left-0 
+        top-0 lg:top-16 w-50 z-50 border-t 
         lg:translate-x-0 
         transition duration-700
         ${stateSidebar ? "translate-x-0" : "-translate-x-full"}
@@ -49,20 +49,39 @@ function Sidebar() {
             <i class="fa-solid fa-bag-shopping text-blue-800 text-lg"></i>
 
             <h1 className="font-bold text-black text-md">
-              مركز سعاد مول للتسوق
+             القيصر للإلكترونيات
             </h1>
           </div>
         </div>
         <div className="sidebar-body md:text-lg text-md h-100 py-5 flex flex-col gap-3 border-b">
-          <div className="Home " onClick={closeOverly}>
+                    <div className="orders mx-2" onClick={closeOverly}>
             <NavLink
-              to={"/"}
+              to={"/dashboard"}
               className={({ isActive }) =>
-                `flex items-center justify-between p-3 rounded font-bold transition-all duration-300
+                `flex items-center justify-between p-2 rounded font-bold transition-all duration-300
      ${
        isActive
          ? "bg-blue-800 text-white"
-         : "text-gray-900 bg-gray-200 hover:bg-blue-50 "
+         : "text-gray-900 bg-gray-200 hover:bg-blue-100"
+     }`
+              }
+            >
+              <div className="container flex items-center justify-between">
+                <p>لوحة التحكم</p>
+                <i class="fa-solid fa-gauge"></i>
+              </div>
+            </NavLink>
+          </div>
+
+          <div className="Home mx-2" onClick={closeOverly}>
+            <NavLink
+              to={"/"}
+              className={({ isActive }) =>
+                `flex items-center justify-between p-2 rounded font-bold transition-all duration-300
+     ${
+       isActive
+         ? "bg-blue-800 text-white"
+         : "text-gray-900 bg-gray-200 hover:bg-blue-100 "
      }`
               }
             >
@@ -72,33 +91,54 @@ function Sidebar() {
               </div>
             </NavLink>
           </div>
-          <div className="Products " onClick={closeOverly}>
+          <div className="Products mx-2" onClick={closeOverly}>
             <NavLink
               to={"/products"}
               className={({ isActive }) =>
-                `flex items-center justify-between p-3 rounded font-bold transition-all duration-300
+                `flex items-center justify-between p-2 rounded font-bold transition-all duration-300
      ${
        isActive
          ? "bg-blue-800 text-white"
-         : "text-gray-900 bg-gray-200 hover:bg-blue-50"
+         : "text-gray-900 bg-gray-200 hover:bg-blue-100"
      }`
               }
             >
               <div className="container flex items-center justify-between">
                 <p>المنتجات</p>
-                <i class="fa-solid fa-burger"></i>
+                <i class="fa-solid fa-laptop"></i>
               </div>
             </NavLink>
           </div>
-          <div className="About" onClick={closeOverly}>
+
+          <div className="orders mx-2 relative" onClick={closeOverly}>
+            <span className="absolute left-0 bottom-7 h-7 w-7 text-white text-center bg-orange-600  rounded-4xl">5</span>
             <NavLink
-              to={"/about"}
+              to={"/orders"}
               className={({ isActive }) =>
-                `flex items-center justify-between p-3 rounded font-bold transition-all duration-300
+                `flex items-center justify-between p-2 rounded font-bold transition-all duration-300
      ${
        isActive
          ? "bg-blue-800 text-white"
-         : "text-gray-900 bg-gray-200 hover:bg-blue-50"
+         : "text-gray-900 bg-gray-200 hover:bg-blue-100"
+     }`
+              }
+            >
+              <div className="container flex items-center justify-between">
+                <p>الطلبات</p>
+                <i class="fa-solid fa-clipboard-list"></i>
+              </div>
+            </NavLink>
+          </div>
+
+          <div className="About mx-2" onClick={closeOverly}>
+            <NavLink
+              to={"/about"}
+              className={({ isActive }) =>
+                `flex items-center justify-between p-2 rounded font-bold transition-all duration-300
+     ${
+       isActive
+         ? "bg-blue-800 text-white"
+         : "text-gray-900 bg-gray-200 hover:bg-blue-100"
      }`
               }
             >
@@ -108,15 +148,16 @@ function Sidebar() {
               </div>
             </NavLink>
           </div>
-          <div className="Helps " onClick={closeOverly}>
+
+          <div className="Helps mx-2" onClick={closeOverly}>
             <NavLink
-              to={"/ProductAddForm"}
+              to={"/help"}
               className={({ isActive }) =>
-                `flex items-center justify-between p-3 rounded font-bold transition-all duration-300
+                `flex items-center justify-between p-2 rounded font-bold transition-all duration-300
      ${
        isActive
          ? "bg-blue-800 text-white"
-         : "text-gray-900 bg-gray-200 hover:bg-blue-50"
+         : "text-gray-900 bg-gray-200 hover:bg-blue-100"
      }`
               }
             >
@@ -127,8 +168,8 @@ function Sidebar() {
             </NavLink>
           </div>
         </div>
-        <div className="sidebar-footer  mt-3 flex flex-col gap-7   ">
-          <div className="info-user flex flex-col gap-1">
+        <div className="sidebar-footer  m-2 flex flex-col gap-7   ">
+          <div className="info-user  flex flex-col gap-1">
             {!profile?.name ? (
               <h1>مرحبا, زائر</h1>
             ) : (
@@ -138,7 +179,7 @@ function Sidebar() {
             )}
           </div>
           <div
-            className={`btn-account ${session ? "bg-red-800 hover:bg-red-900 " : "bg-green-800 hover:bg-green-900 "} text-white transition duration-500 cursor-pointer p-3 rounded-lg font-bold  text-center `}
+            className={`btn-account m-2 ${session ? "bg-red-800 hover:bg-red-900 " : "bg-blue-800 hover:bg-blue-900 "} text-white transition duration-500 cursor-pointer p-2 rounded-lg font-bold  text-center `}
             onClick={() => {
               closeOverly();
               handleLogout();

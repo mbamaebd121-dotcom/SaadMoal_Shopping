@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="bg-linear-to-b lg:ml-70 from-gray-900 to-gray-950  p-8 text-white border-t border-orange-600/20">
+    <footer className="bg-linear-to-b lg:ml-50 from-gray-900 to-gray-950  p-8 text-white border-t border-orange-600/20">
       <div className="max-w-7xl mx-auto">
         {/* القسم الرئيسي */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-8 border-b border-gray-800">
