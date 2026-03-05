@@ -33,7 +33,7 @@ function Header() {
         >
           <i class="fa-solid fa-cart-shopping text-lg"></i>
           
-          <span className={`${carts.length === 0 && 'hidden'} absolute text-md py-1 px-3 top-0 shadow-2xl bottom-5 rounded-4xl text-white bg-orange-600`}>{carts.length}</span>
+          <span className={`${carts.length === 0 && 'hidden'} absolute text-md h-7 w-7 text-center top-0 shadow-2xl bottom-5 rounded-4xl text-white bg-orange-600`}>{carts.length}</span>
         </div>
 
           <div className="modren text-2xl cursor-pointer">
