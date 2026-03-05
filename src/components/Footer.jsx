@@ -85,7 +85,7 @@ function Footer() {
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-400">
                 <i className="fa-solid fa-location-dot text-blue-600 w-5"></i>
-                <span>صنعاء - شارع الستين</span>
+                <span>الشحر - برع السدة </span>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <i className="fa-solid fa-phone text-blue-600 w-5"></i>
