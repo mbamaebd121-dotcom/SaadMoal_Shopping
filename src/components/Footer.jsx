@@ -15,7 +15,7 @@ function Footer() {
               </h2>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              وجهتك الأولى للتسوق الإلكتروني في الوطن العربي. نوفر لك أفضل المنتجات بأسعار منافسة وتجربة تسوق فريدة.
+              وجهتك الأولى للتسوق الإلكتروني في حضرموت . نوفر لك أفضل المنتجات بأسعار منافسة وتجربة تسوق فريدة.
             </p>
             <div className="flex gap-3 mt-4">
               <span className="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-blue-600 transition-colors cursor-pointer">
@@ -93,7 +93,7 @@ function Footer() {
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <i className="fa-solid fa-envelope text-blue-600 w-5"></i>
-                <span>info@soadmall.com</span>
+                <span>info@alcaesar.com</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
                 <i className="fa-regular fa-clock text-blue-600 w-5"></i>

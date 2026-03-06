@@ -7,6 +7,7 @@ import ProductsContextProvider from "./context/ProductsContext.jsx";
 import AuthProvider from "./context/AuthContext.jsx";
 import CartContextProvider from "./context/CartContext.jsx";
 import CheckOutProvider from "./context/CheckOutContext.jsx";
+import HelpContextProvider from "./context/HelpContext.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
@@ -14,7 +15,9 @@ createRoot(document.getElementById("root")).render(
         <ProductsContextProvider>
           <AuthProvider>
             <CheckOutProvider>
-              <App />
+              <HelpContextProvider>
+                <App />
+              </HelpContextProvider>
             </CheckOutProvider>
           </AuthProvider>
         </ProductsContextProvider>
