@@ -1,8 +1,9 @@
 import { NavLink } from "react-router-dom";
+// bg-linear-to-b lg:ml-50 from-gray-900 to-gray-950  p-8 text-white border-t border-orange-600/20
 
 function Footer() {
   return (
-    <footer className="bg-linear-to-b lg:ml-50 from-gray-900 to-gray-950  p-8 text-white border-t border-orange-600/20">
+    <footer className="lg:ml-50 bg-gray-900 text-white rounded-t-4xl px-4 py-4">
       <div className="max-w-7xl mx-auto">
         {/* القسم الرئيسي */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-8 border-b border-gray-800">
@@ -46,7 +47,7 @@ function Footer() {
                 <li key={index}>
                   <NavLink to={item.link} className="flex items-center justify-between group p-2 hover:bg-gray-800/50 rounded-xl transition-all duration-300">
                     <span className="text-gray-400  transition-colors font-blod">{item.name}</span>
-                    <i className={`fa-solid ${item.icon} text-gray-500 font-blod group-hover:text-blue-600 transition-colors`}></i>
+                    <i className={`fa-solid ${item.icon} text-gray-500 font-blod group-hover:text-blue-500 transition-colors`}></i>
                   </NavLink>
                 </li>
               ))}
@@ -67,7 +68,7 @@ function Footer() {
                 { name: 'الشحن والتوصيل', icon: 'fa-truck',path:'/' },
               ].map((item, index) => (
                 <li key={index}>
-                  <NavLink to={item.path} className="flex items-center gap-3 text-gray-400 hover:bg-gray-900 hover:text-blue-600 duration-500 transition-colors p-2">
+                  <NavLink to={item.path} className="flex items-center gap-3 text-gray-400 hover:bg-gray-900 hover:text-blue-500 duration-500 transition-colors p-2">
                     <i className={`fa-solid ${item.icon}  w-5 font-blod`}></i>
                     <span className="font-blod">{item.name}</span>
                   </NavLink>
@@ -84,19 +85,19 @@ function Footer() {
             </h3>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-400">
-                <i className="fa-solid fa-location-dot text-blue-600 w-5"></i>
+                <i className="fa-solid fa-location-dot text-blue-500 w-5"></i>
                 <span>الشحر - برع السدة </span>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
-                <i className="fa-solid fa-phone text-blue-600 w-5"></i>
+                <i className="fa-solid fa-phone text-blue-500 w-5"></i>
                 <span dir="ltr">+967 777 777 777</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
-                <i className="fa-solid fa-envelope text-blue-600 w-5"></i>
+                <i className="fa-solid fa-envelope text-blue-500 w-5"></i>
                 <span>info@alcaesar.com</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
-                <i className="fa-regular fa-clock text-blue-600 w-5"></i>
+                <i className="fa-regular fa-clock text-blue-500 w-5"></i>
                 <span>السبت - الخميس: 9ص - 10م</span>
               </div>
             </div>
@@ -107,7 +108,7 @@ function Footer() {
         <div className="py-8 border-b border-gray-800">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <i className="fa-regular fa-envelope text-blue-600 text-2xl"></i>
+              <i className="fa-regular fa-envelope text-blue-500 text-2xl"></i>
               <div>
                 <h3 className="font-bold">اشترك في النشرة البريدية</h3>
                 <p className="text-sm text-gray-400">احصل على آخر العروض والتخفيضات</p>

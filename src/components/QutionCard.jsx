@@ -6,7 +6,7 @@ function QutionCard({qution,answer,id,active}) {
     
     
   return (
-    <div className="qutionCard">
+    <div className="qutionCard border-b pb-2">
         <div className="container-qution-btn flex items-center gap-2">
             {/* <i class="fa-solid fa-chevron-up"></i> */}
             <div className="qution font-bold text-lg">{qution}</div>

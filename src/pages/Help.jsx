@@ -13,7 +13,7 @@ function Help() {
         <div className="list-qutions-section">
           <div className="title font-bold text-lg">الأسئلة</div>
           <span className="h-0.5 w-10 flex bg-blue-800"></span>
-          <ul className="grid gap-2 p-2">
+          <ul className="grid gap-4 p-2">
             {Qutions.map((item, index) => (
               <QutionCard
                 key={index}
@@ -25,21 +25,21 @@ function Help() {
             ))}
           </ul>
         </div>
-        <div className="contact-section">
+        <div className="contact-section bg-gray-900 text-gray-100 text-sm px-3 py-10 rounded-4xl">
           <div className="title font-bold text-lg">
             خدمة العملاء
           </div>
-          <span className="h-0.5 w-20 flex bg-blue-800"></span>
+          <span className="h-0.5 w-20 flex bg-orange-600"></span>
           <div className="info">
             <h3>للمزيد من التفاصيل يرجى التواصل مع خدمة العملاء عبر الارقام التالية :</h3>
             <div className="phoneNumber flex flex-wrap">
-              <div className="container w-60 flex items-center gap-6">
+              <div className="container w-50 flex items-center gap-6">
                 <p>777424312</p>
-                <i class="fa-solid fa-square-phone text-blue-800 font-bold"></i>
+                <i class="fa-solid fa-square-phone text-blue-600 font-bold"></i>
               </div>
                             <div className="container w-60 flex items-center gap-6">
                 <p>777426662</p>
-                <i class="fa-solid fa-square-phone  text-blue-800 font-bold"></i>
+                <i class="fa-solid fa-square-phone  text-blue-600 font-bold"></i>
               </div>
               
             </div>
