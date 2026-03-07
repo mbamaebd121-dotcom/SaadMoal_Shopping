@@ -3,10 +3,12 @@ import { useProducts } from "../hooks/useProducts";
 import { useAuth } from "../hooks/useAuth";
 import { authService } from "../services/authService";
 import { useNavigate } from "react-router-dom";
+import { useOrders } from "../hooks/useOrders";
 
 function Sidebar() {
   const { stateSidebar, activeSideBar } = useProducts();
   const { session, profile } = useAuth();
+  const {orders} = useOrders();
   const navigate = useNavigate();
   console.log(profile);
 
@@ -111,7 +113,7 @@ function Sidebar() {
           </div>
 
           <div className="orders mx-2 relative" onClick={closeOverly}>
-            <span className="absolute left-0 bottom-7 h-7 w-7 text-white text-center bg-orange-600  rounded-4xl">5</span>
+            <span className={`absolute ${orders.length > 0 ? 'block':'hidden'} left-0 bottom-7 h-7 w-7 text-white text-center bg-orange-600  rounded-4xl`}>{orders.length}</span>
             <NavLink
               to={"/orders"}
               className={({ isActive }) =>

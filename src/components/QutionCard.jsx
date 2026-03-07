@@ -17,7 +17,7 @@ function QutionCard({qution,answer,id,active}) {
         
         <div className={`answer ${active?'block':'hidden'}`}>
             {answer.map((item)=>(
-                <li >{item.step}</li>
+                <li className="text-gray-600">{item.step}</li>
             ))}
         </div>
     </div>
