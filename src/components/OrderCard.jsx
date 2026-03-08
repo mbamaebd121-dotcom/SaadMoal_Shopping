@@ -1,8 +1,13 @@
-function OrderCard({order_number,short_description,date}) {
+import { useOrders } from "../hooks/useOrders";
+
+function OrderCard({order_number,short_description,date,id}) {
+  const {selectActiveOrder} = useOrders();
   return (
     <>
       <div className="card  md:grid bg-gray-100 rounded flex  p-2 relative">
-        <div className="btn-show-detiles-order absolute top-0 left-0 text-lg flex items-center py-1">
+        <div className="btn-show-detiles-order absolute top-0 left-0 text-xl flex items-center py-1 cursor-pointer"
+        onClick={()=>selectActiveOrder(id)}
+        >
           
           <i class="fa-solid fa-eye"></i>
         </div>
@@ -17,7 +22,7 @@ function OrderCard({order_number,short_description,date}) {
             <p className="font-blod ">التاريخ</p>
           </div>
         </div>
-        <div className="info md:flex md:justify-between grid justify-center gap-2   flex-3">
+        <div className="info md:flex md:justify-between grid justify-start gap-2 pr-3  flex-4">
           <div className="order-number grid ">
             <span className="text-gray-800 ">{order_number}</span>
           </div>

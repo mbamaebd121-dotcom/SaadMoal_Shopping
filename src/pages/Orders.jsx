@@ -28,6 +28,7 @@ function Orders() {
                     order_number={item.order_number}
                     short_description={item.short_description}
                     date={item.date}
+                    id={item.id}
                   />
                 ))}
             </div>
@@ -72,6 +73,7 @@ function Orders() {
                     order_number={item.order_number}
                     short_description={item.short_description}
                     date={item.date}
+                    order_cart={item.cart}
                   />
                 ))}
             </div>

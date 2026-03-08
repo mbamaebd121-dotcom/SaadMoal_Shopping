@@ -12,19 +12,21 @@ import OrderContextProvider from "./context/OrdersContext.jsx";
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
+    <OrderContextProvider>
       <CartContextProvider>
         <ProductsContextProvider>
           <AuthProvider>
             <CheckOutProvider>
               <HelpContextProvider>
-                <OrderContextProvider>
+                
                 <App />
-                </OrderContextProvider>
+               
               </HelpContextProvider>
             </CheckOutProvider>
           </AuthProvider>
         </ProductsContextProvider>
       </CartContextProvider>
+      </OrderContextProvider>
     </BrowserRouter>
   </StrictMode>,
 );

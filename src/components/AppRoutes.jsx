@@ -8,6 +8,7 @@ import Orders from "../pages/Orders";
 import Checkout from "../pages/Checkout";
 import Help from "../pages/Help";
 import Dashboard from "../pages/Dashboard";
+import OrderCardDetiles from "../pages/OrderCardDetiles";
 
 
 function AppRoutes() {
@@ -23,6 +24,8 @@ function AppRoutes() {
         <Route path="/checkOut" element={<Checkout />} />
         <Route path="/help" element={<Help />} />
         <Route path="/dashboard" element={<Dashboard />} />
+        <Route path="/orderDetiles" element={<OrderCardDetiles />} />
+
       </Routes>
     </div>
   );

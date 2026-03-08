@@ -1,10 +1,19 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useReducer, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useOrders } from "../hooks/useOrders";
+import { useCart } from "../hooks/useCart";
+
+
+
 
 export const CheckOutContext = createContext({});
 const CheckOutProvider = ({ children }) => {
   const navigate = useNavigate();
+  const {addOrder} = useOrders();
+  const {carts,setCarts} = useCart();
+  
+
   //Reducer
 
   const handlerCheckOutForm = (state,action)=>{
@@ -21,15 +30,15 @@ const CheckOutProvider = ({ children }) => {
   const [stepNumber,dispatch] = useReducer(handlerCheckOutForm,1)
 
   // state infoUser
-  const [name, setName] = useState("");
-  const [phoneN, setPhoneN] = useState("");
-  const [address, setAddress] = useState("");
+  const [name, setName] = useState("محمد طالب");
+  const [phoneN, setPhoneN] = useState("777543213");
+  const [address, setAddress] = useState("الحوة-الشحر-حضرموت");
 
   // state Card
-  const [nameCard,setNameCard] = useState('');
-  const [numberCard,setNumberCard] = useState('');
-  const [expiry,setExpiry] = useState('');
-  const [cvv,setCvv] = useState('');
+  const [nameCard,setNameCard] = useState('محمد طالب');
+  const [numberCard,setNumberCard] = useState('1234 5678 9012 3456');
+  const [expiry,setExpiry] = useState('MM/YY');
+  const [cvv,setCvv] = useState('CVV');
 
   // functions
 
@@ -42,14 +51,10 @@ const CheckOutProvider = ({ children }) => {
 
     }
     else{
-      setName('')
-      setPhoneN('')
-      setAddress('')
-      setNameCard('')
-      setNumberCard('')
-      setExpiry('')
-      setCvv('')
-      navigate('/myOrders')
+      addOrder(carts);
+      
+      setCarts([]);
+      navigate('/orders')
 
 
     }

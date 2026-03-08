@@ -1,15 +1,10 @@
 import InfoUserForm from "../components/InfoUserForm";
 import OrderSummary from "../components/OrderSummary";
 import CardForm from "../components/CardForm";
-import { useAuth } from "../hooks/useAuth";
-import Login from '../pages/Login'
-
 
 import { useCheckOut } from "../hooks/useCheckOut";
 function Checkout() {
   const { stepNumber, dispatch,handlerCheckComplatePay } = useCheckOut();
-  const {session} = useAuth();
-  if(!session) return <Login/>
 
   return (
     <div className=" my-10 md:flex  md:justify-between gap-5 grid justify-center">
