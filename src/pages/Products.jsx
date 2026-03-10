@@ -30,6 +30,9 @@ function Products() {
             <option value="mobile" className="p-2">جوالات</option>
             <option value="laptop" className="p-2">لابتوب</option>
             <option value="tv" className="p-2">شاشات</option>
+            <option value="hour" className="p-2">ساعات</option>
+            <option value="earphone" className="p-2">سماعات</option>
+
           </select>
         </div>
         <div className="search ">

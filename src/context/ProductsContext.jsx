@@ -2,6 +2,7 @@
 /* eslint-disable react-refresh/only-export-components */
 import { createContext, useEffect, useState } from "react";
 import { supabase } from "../supabase";
+import { useNavigate } from "react-router-dom";
 
 export const ProductsContext = createContext({});
 const ProductsContextProvider = ({ children }) => {
@@ -10,6 +11,8 @@ const ProductsContextProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);   
   const [error, setError] = useState(null);
   const [stateSidebar, setStateSidebar] = useState(false);
+  const [activeProductDetails,setActiveProductDetails] = useState(null);
+  const navigate = useNavigate();
 
 
   useEffect(() => {
@@ -59,6 +62,11 @@ const ProductsContextProvider = ({ children }) => {
     setStateSidebar(!stateSidebar);
   };
 
+  const showProductDetails = (id)=>{
+    setActiveProductDetails(id);    
+    navigate('/products-details')
+  }
+
   const value = {
     products,
     setProducts,
@@ -69,7 +77,10 @@ const ProductsContextProvider = ({ children }) => {
     setLoading,
     error,
     setError,
-    fetchProducts
+    activeProductDetails,
+    setActiveProductDetails,
+    fetchProducts,
+    showProductDetails
   };
 
   return (

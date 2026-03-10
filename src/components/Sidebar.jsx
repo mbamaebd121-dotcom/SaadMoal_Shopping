@@ -114,7 +114,7 @@ function Sidebar() {
           </div>
 
           <div className="orders mx-2 relative" onClick={closeOverly}>
-            <span className={`absolute ${orders.length > 0 ? 'block':'hidden'} left-0 bottom-7 h-7 w-7 text-white text-center bg-red-700  rounded-4xl`}>{orders.length}</span>
+            <span className={`absolute ${orders.length > 0 ? 'block':'hidden'} left-0 bottom-7 h-7 w-7 text-white text-center bg-accent  rounded-4xl`}>{orders.length}</span>
             <NavLink
               to={"/orders"}
               className={({ isActive }) =>
@@ -189,10 +189,7 @@ function Sidebar() {
             }}
           >
             {!session ? (
-              // <div className="btn-login flex items-center justify-between ">
-              //   <p>تسجيل الدخول</p>
-              //   <i class="fa-solid fa-arrow-right-to-bracket"></i>
-              // </div>
+
               <Button
               name='تسجيل الدخول'
               className=""
@@ -201,10 +198,7 @@ function Sidebar() {
               
               />
             ) : (
-              // <div className="btn-signUp flex items-center justify-between">
-              //   <p>تسجيل الخروج</p>
-              //   <i class="fa-solid fa-arrow-right-from-bracket"></i>
-              // </div>
+
                             <Button
               name='تسجيل الخروج'
               className=""

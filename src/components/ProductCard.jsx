@@ -1,12 +1,17 @@
 /* eslint-disable no-unused-vars */
 import { useCart } from "../hooks/useCart";
+import { useProducts } from "../hooks/useProducts";
+import Button from "./Button";
 
 function ProductCard({ image_url, name, description, price, is_active, id }) {
   const { handelerAddTocart } = useCart();
+  const {showProductDetails} = useProducts();
 
   return (
     <>
-      <div className="card product w-60 h-90 bg-white shadow-md rounded-b-2xl relative">
+      <div className="card product w-60 h-90 bg-white shadow-md rounded-b-2xl relative border-transparent hover:-translate-y-1 border-2 hover:border-secondary transition duration-700 cursor-pointer"
+      onClick={()=>showProductDetails(id)}
+      >
         <div className="avalible absolute left-1 top-0">
           {!is_active && (
             <p className="bg-red-800 py-1 px-3 rounded-2xl text-white">
@@ -44,12 +49,25 @@ function ProductCard({ image_url, name, description, price, is_active, id }) {
 
           <div
             className="btnAdd cursor-pointer rounded bg-accent w-10 text-white text-center"
-            onClick={() =>
+            onClick={(e) =>
+            {
+              
               handelerAddTocart(name, image_url, description, price, id)
+              e.stopPropagation()
+
             }
+          }
           >
-            <i class="fa-solid fa-plus"></i>
+            <span></span>
+            <i class="fa-solid fa-cart-plus"></i>
           </div>
+          {/* <Button
+          name='إضافة إلى السلة'
+          variant="primary"
+          onClick={()=>handelerAddTocart(name, image_url, description, price, id)}
+          
+          /> */}
+
         </div>
       </div>
     </>

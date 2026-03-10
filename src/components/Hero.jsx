@@ -16,10 +16,10 @@ function Hero() {
             
         </div>
   <Button
-    name="تسجيل الدخول"
+    name="تسوق الآن"
     onClick={navigate('/products')}
-    variant="Secondary"
-    icon="fa-solid fa-right-to-bracket" // أيقونة اختيارية
+    variant="primary"
+    
   />
         
     </div>

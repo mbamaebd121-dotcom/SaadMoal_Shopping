@@ -34,7 +34,7 @@ function CartItem({ name, image_url, description, price, quantity, id }) {
       <div className="flex items-center justify-between mt-4">
 
         {/* quantity control */}
-        <div className="flex items-center border rounded-md overflow-hidden">
+        <div className="flex items-center border border-gray-200 rounded-md overflow-hidden">
 
           <button
             className="px-3 py-1 bg-gray-100 hover:bg-gray-200"
