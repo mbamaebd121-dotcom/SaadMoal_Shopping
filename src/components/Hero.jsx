@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
+import Button from "./Button";
 
 function Hero() {
     const navigate = useNavigate();
@@ -15,11 +15,12 @@ function Hero() {
             </p>
             
         </div>
-        <div className="btn bg-orange-600 rounded-2xl p-2 cursor-pointer text-white text-center w-40"
-        onClick={()=>navigate('/products')}
-        >
-            تسوق الان
-        </div>
+  <Button
+    name="تسجيل الدخول"
+    onClick={navigate('/products')}
+    variant="Secondary"
+    icon="fa-solid fa-right-to-bracket" // أيقونة اختيارية
+  />
         
     </div>
     </>

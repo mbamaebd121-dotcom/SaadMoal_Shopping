@@ -14,7 +14,7 @@ function Home() {
         <div className="section-products flex flex-col items-center p-2 gap-3">
           <div className="title flex items-center gap-3  pb-1">
             <p> افضل المنتجات في المحل واعلاها تقييماً</p>
-            <i class="fa-solid fa-fire text-orange-700 animate-pulse text-2xl"></i>
+            <i class="fa-solid fa-fire text-red-700 animate-pulse text-2xl"></i>
           </div>
           {loading && (
             <div className="loading flex justify-center items-center h-90">

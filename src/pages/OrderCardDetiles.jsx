@@ -1,7 +1,9 @@
 import { useOrders } from "../hooks/useOrders";
+import { useNavigate } from "react-router-dom";
 
 function OrderCardDetiles() {
   const { orders, activeShowOrder } = useOrders();
+  const navigate = useNavigate();
 
   // فلترة الطلب النشط
   const activeOrder = orders.find((item) => item.id === activeShowOrder);
@@ -13,14 +15,29 @@ function OrderCardDetiles() {
 
   if (!activeOrder) {
     return (
-      <div className="container flex justify-center items-center">
+      <>
+          <div className="btn-back cursor-pointer text-blue-800"
+    onClick={()=>navigate('/orders')}
+    >
+      <i class="fa-solid fa-arrow-right text-2xl"></i>
+
+    </div>
+            <div className="container flex justify-center items-center">
         <p>لا يوجد طلب لعرضه</p>
-      </div>
+      </div>      
+      </>
     );
   }
 
   return (
-    <div className="container flex justify-center items-center">
+    <>
+    <div className="btn-back cursor-pointer text-blue-800"
+    onClick={()=>navigate('/orders')}
+    >
+      <i class="fa-solid fa-arrow-right text-2xl"></i>
+
+    </div>
+        <div className="container flex justify-center items-center">
       <div className="card shadow p-10 rounded-md bg-white">
         {/* رأس البطاقة */}
         <div className="border-b pb-2">
@@ -56,6 +73,10 @@ function OrderCardDetiles() {
         </div>
       </div>
     </div>
+    
+    </>
+    
+
   );
 }
 

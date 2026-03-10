@@ -1,7 +1,8 @@
 import CartItem from "../components/CartItem";
 import { useCart } from "../hooks/useCart";
 import { useNavigate } from "react-router-dom";
-import ButtonPrimrary from "../components/ButtonPrimrary";
+import Button from "../components/Button";
+
 
 function Cart() {
   const { carts, removeAllInCart } = useCart();
@@ -23,13 +24,12 @@ function Cart() {
           <div className="text-center py-3 text-lg font-semibold">السلة</div>
 
           {/* زر إفراغ السلة */}
-          <div
+          {/* <div
             className="absolute left-4 top-3 flex items-center gap-2 cursor-pointer bg-red-700 rounded-2xl py-1 px-3 text-white"
-            onClick={removeAllInCart}
-          >
-            <p>إفراغ السلة</p>
-            <i className="fa-solid fa-trash-can"></i>
-          </div>
+            
+          > */}
+          {/* <p>إفراغ السلة</p>
+            <i className="fa-solid fa-trash-can"></i> */}
 
           {/* العناصر — هنا فقط السكرول */}
           <div className=" overflow-y-auto px-5 py-3 flex flex-col items-center gap-3">
@@ -41,17 +41,28 @@ function Cart() {
           {/* الإجمالي + زر الدفع */}
           <div className="md:p-2 py-2 md:bg-white mx-5 flex  justify-center">
             <div className="container w-70   md:w-full  bg-white">
-                          <div className="flex justify-between  ">
-              <span>الإجمالي</span>
-              <p>{totalCart}</p>
-            </div>
+              <div className="flex justify-between  ">
+                <span>الإجمالي</span>
+                <p>{totalCart}</p>
+              </div>
             </div>
           </div>
-          <div className="conteiner-btn flex mx-4 justify-center mt-5">
-            <ButtonPrimrary 
-            onclick={()=>navigate('/checkOut')}
-            name='شراء'/>
-          </div>
+<div className="flex gap-2 justify-center mt-5">
+  {/* زر الشراء */}
+  <Button
+    name="شراء"
+    onClick={() => navigate("/checkOut")}
+    variant="primary"
+  />
+
+  {/* زر إفراغ السلة */}
+  <Button
+    name="إفراغ السلة"
+    icon="fa-solid fa-trash-can"
+    onClick={() => removeAllInCart()}
+    variant="danger"
+  />
+</div>
         </div>
       )}
     </div>

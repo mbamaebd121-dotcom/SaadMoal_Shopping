@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from '../assets/images/logo-Login.svg'
 import { authService } from "../services/authService"
-import { profileService } from "../services/profileService"
+import Button from "../components/Button";
+
 
 
 
@@ -68,7 +69,12 @@ className="w-80 md:w-110 h-120 absolute top-10 shadow-md rounded-2xl bg-white pt
         onChange={(e)=>setPassword(e.target.value)}
         />
     </div>
-    <button className="bg-blue-800 px-10 py-2 text-white cursor-pointer rounded ">إنشاء حساب</button>
+  <Button
+    name="تسجيل الدخول"
+    onClick={handleRegister}
+    variant="secondary"
+    icon="fa-solid fa-right-to-bracket" // أيقونة اختيارية
+  />
     <div className="route flex gap-2 font-medium">
        <p> لدي حساب ؟</p>
        <p className="text-blue-800 cursor-pointer"

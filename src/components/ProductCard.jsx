@@ -26,7 +26,7 @@ function ProductCard({ image_url, name, description, price, is_active, id }) {
             <h1 className="font-bold text-lg">{name}</h1>
           </div>
           <div className="price flex items-center">
-            <p className="text-blue-600 font-bold">${price}</p>
+            <p className="text-blue-800 font-bold">{price}ريال</p>
           </div>
           <p className="text-gray-600 text-sm">{description}</p>
         </div>
@@ -39,11 +39,11 @@ function ProductCard({ image_url, name, description, price, is_active, id }) {
                   <i class="fa-solid fa-star w-10 text-yellow-400"></i>
                 ))}
             </div>
-            <span className="self-end">4/6 *</span>
+           
           </div>
 
           <div
-            className="btnAdd cursor-pointer rounded bg-orange-600 w-10 text-white text-center"
+            className="btnAdd cursor-pointer rounded bg-accent w-10 text-white text-center"
             onClick={() =>
               handelerAddTocart(name, image_url, description, price, id)
             }

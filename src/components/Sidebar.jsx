@@ -4,6 +4,7 @@ import { useAuth } from "../hooks/useAuth";
 import { authService } from "../services/authService";
 import { useNavigate } from "react-router-dom";
 import { useOrders } from "../hooks/useOrders";
+import Button from "./Button";
 
 function Sidebar() {
   const { stateSidebar, activeSideBar } = useProducts();
@@ -113,7 +114,7 @@ function Sidebar() {
           </div>
 
           <div className="orders mx-2 relative" onClick={closeOverly}>
-            <span className={`absolute ${orders.length > 0 ? 'block':'hidden'} left-0 bottom-7 h-7 w-7 text-white text-center bg-orange-600  rounded-4xl`}>{orders.length}</span>
+            <span className={`absolute ${orders.length > 0 ? 'block':'hidden'} left-0 bottom-7 h-7 w-7 text-white text-center bg-red-700  rounded-4xl`}>{orders.length}</span>
             <NavLink
               to={"/orders"}
               className={({ isActive }) =>
@@ -181,22 +182,36 @@ function Sidebar() {
             )}
           </div>
           <div
-            className={`btn-account m-2 ${session ? "bg-red-800 hover:bg-red-900 " : "bg-blue-800 hover:bg-blue-900 "} text-white transition duration-500 cursor-pointer p-2 rounded-lg font-bold  text-center `}
+            className={`btn-account m-2 text-white transition duration-500 cursor-pointer p-2 rounded-lg font-bold  text-center `}
             onClick={() => {
               closeOverly();
               handleLogout();
             }}
           >
             {!session ? (
-              <div className="btn-login flex items-center justify-between ">
-                <p>تسجيل الدخول</p>
-                <i class="fa-solid fa-arrow-right-to-bracket"></i>
-              </div>
+              // <div className="btn-login flex items-center justify-between ">
+              //   <p>تسجيل الدخول</p>
+              //   <i class="fa-solid fa-arrow-right-to-bracket"></i>
+              // </div>
+              <Button
+              name='تسجيل الدخول'
+              className=""
+              variant="primary"
+              icon="fa-solid fa-right-to-bracket"
+              
+              />
             ) : (
-              <div className="btn-signUp flex items-center justify-between">
-                <p>تسجيل الخروج</p>
-                <i class="fa-solid fa-arrow-right-from-bracket"></i>
-              </div>
+              // <div className="btn-signUp flex items-center justify-between">
+              //   <p>تسجيل الخروج</p>
+              //   <i class="fa-solid fa-arrow-right-from-bracket"></i>
+              // </div>
+                            <Button
+              name='تسجيل الخروج'
+              className=""
+              variant="danger"
+              icon="fa-solid fa-arrow-right-from-bracket"
+              
+              />
             )}
           </div>
         </div>

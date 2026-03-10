@@ -35,7 +35,7 @@ function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4 relative inline-block">
               روابط سريعة
-              <span className="absolute -bottom-2 right-0 w-12 h-0.5 bg-orange-500"></span>
+              <span className="absolute -bottom-2 right-0 w-12 h-0.5 bg-accent"></span>
             </h3>
             <ul className="space-y-2">
               {[
@@ -58,7 +58,7 @@ function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4 relative inline-block">
               مساعدة ودعم
-              <span className="absolute -bottom-2 right-0 w-12 h-0.5 bg-orange-500"></span>
+              <span className="absolute -bottom-2 right-0 w-12 h-0.5 bg-accent"></span>
             </h3>
             <ul className="space-y-2">
               {[
@@ -81,7 +81,7 @@ function Footer() {
           <div>
             <h3 className="text-lg font-bold mb-4 relative inline-block">
               تواصل معنا
-              <span className="absolute -bottom-2 right-0 w-12 h-0.5 bg-orange-500"></span>
+              <span className="absolute -bottom-2 right-0 w-12 h-0.5 bg-accent"></span>
             </h3>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-400">
@@ -118,9 +118,9 @@ function Footer() {
               <input 
                 type="email" 
                 placeholder="بريدك الإلكتروني"
-                className="px-4 py-2 bg-gray-800 text-white rounded-r-lg w-full md:w-64 focus:outline-none focus:ring-1 focus:ring-orange-500"
+                className="px-4 py-2 bg-gray-800 text-white rounded-r-lg w-full md:w-64 focus:outline-none focus:ring-1 focus:ring-accent"
               />
-              <button className="px-6 py-2 bg-orange-600 hover:bg-orange-700 rounded-l-lg transition-colors font-bold">
+              <button className="px-6 py-2 bg-accent hover:bg-accentHover rounded-l-lg transition-colors font-bold">
                 اشتراك
               </button>
             </div>
@@ -130,10 +130,10 @@ function Footer() {
         {/* قسم المطور وحقوق النشر */}
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <div className="flex items-center gap-2">
-            <i className="fa-solid fa-laptop-code text-2xl text-orange-500 animate-pulse"></i>
+            <i className="fa-solid fa-laptop-code text-2xl text-accent animate-pulse"></i>
             <span className="text-gray-300">
               تصميم وبرمجة 
-              <span className="font-bold text-orange-500 mr-1">المطور بامعيبد</span>
+              <span className="  mr-1">المطور بامعيبد</span>
             </span>
           </div>
           <div className="text-gray-400 text-sm flex items-center gap-2">

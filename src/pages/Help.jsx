@@ -12,7 +12,7 @@ function Help() {
         </div>
         <div className="list-qutions-section">
           <div className="title font-bold text-lg">الأسئلة الشائعة !</div>
-          <span className="h-0.5 w-20 flex bg-blue-800"></span>
+          <span className="h-0.5 w-20 flex bg-accent"></span>
           <ul className="grid gap-4 p-2">
             {Qutions.map((item, index) => (
               <QutionCard
@@ -31,18 +31,18 @@ function Help() {
 
           <div className="title font-bold text-lg">
            <p>خدمة العملاء</p>
-          <span className="h-0.5 w-20 flex bg-orange-600"></span>
+          <span className="h-0.5 w-20 flex bg-accent"></span>
           </div>
           <div className="info grid gap-5 ">
             <h3>للمزيد من التفاصيل يرجى التواصل مع خدمة العملاء عبر الارقام التالية :</h3>
             <div className="phoneNumber flex flex-wrap gap-2  ">
-              <div className="container rounded-md p-1 w-50 flex items-center justify-between hover:bg-blue-900 border-gray-400 border transition duration-500 cursor-pointer">
-                <p className="text-gray-300">777424312</p>
-                <i class="fa-solid fa-square-phone text-2xl text-orange-500 font-bold"></i>
+              <div className="container bg-white rounded-md p-1 w-50 flex items-center justify-between  border-gray-400 border transition duration-500 cursor-pointer">
+                <p className="text-black">777424312</p>
+                <i class="fa-solid fa-square-phone text-2xl text-accent rounded bg-white font-bold"></i>
               </div>
-                            <div className="container rounded-md p-1 w-50 flex items-center justify-between border-gray-400 transition duration-500 border hover:bg-blue-900 cursor-pointer">
-                <p className="text-gray-300">777426662</p>
-                <i class="fa-solid fa-square-phone text-2xl text-orange-500 font-bold"></i>
+                            <div className="container bg-white rounded-md p-1 w-50 flex items-center justify-between border-gray-400 transition duration-500 border  cursor-pointer">
+                <p className="text-black">777426662</p>
+                <i class="fa-solid fa-square-phone text-2xl text-accent rounded bg-white font-bold"></i>
               </div>
               
             </div>

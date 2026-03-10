@@ -1,10 +1,17 @@
 import InfoUserForm from "../components/InfoUserForm";
 import OrderSummary from "../components/OrderSummary";
 import CardForm from "../components/CardForm";
+import Button from "../components/Button";
+import { useCart } from "../hooks/useCart";
+import Products from './Products'
+import { useNavigate } from "react-router-dom";
 
 import { useCheckOut } from "../hooks/useCheckOut";
 function Checkout() {
   const { stepNumber, dispatch,handlerCheckComplatePay } = useCheckOut();
+  const {carts} = useCart();
+  const navigate = useNavigate();
+  if(carts.length === 0) return ()=> navigate('/products')
 
   return (
     <div className=" my-10 md:flex  md:justify-between gap-5 grid justify-center">
@@ -40,12 +47,22 @@ function Checkout() {
           ></span>
 
         </div>
-
+{/* 
         <div className="btn bg-orange-600 p-2 rounded-2xl hover:bg-orange-700 text-white text-center cursor-pointer"
-        onClick={()=>handlerCheckComplatePay()}
+        }
         >
           إتمام عملية الدفع
+        </div> */}
+        <div className="container-btn flex justify-center">
+  <Button
+    name="تأكيد الدفع"
+    onClick={handlerCheckComplatePay}
+    variant="primary"
+    
+  />
         </div>
+
+
       </div>
 
       <OrderSummary />
