@@ -12,7 +12,14 @@ const filterOrderPind = orders.filter(item=>item.isPind);
 const filterOrderAway = orders.filter(item=>item.isAway);
 const filterOrderComplate = orders.filter(item=>item.isComplate);
 // filter Products
-const filterProductsLaptop  = products.filter(item=>item.isComplate);
+const filterProductsLaptop  = products.filter(item=>item.category === 'لابتوب');
+const filterProductsMobile  = products.filter(item=>item.category === 'جوال');
+const filterProductsScreen  = products.filter(item=>item.category === 'شاشة');
+
+const filterProductsEarphone  = products.filter(item=>item.category === 'سماعة');
+const filterProductsHour  = products.filter(item=>item.category === 'ساعة');
+const filterProductsAnother  = products.filter(item=>item.category === 'أخرى');
+
 
 
   return (
@@ -36,23 +43,27 @@ const filterProductsLaptop  = products.filter(item=>item.isComplate);
           <div className="container-card-detailes flex flex-wrap gap-2">
                                 <div className="card bg-white flex items-center justify-between md:w-60 w-full p-5 rounded-lg border-l-4 border-secondary">
             <p>لابتوب</p>
-            <span>40</span>
+            <span>{filterProductsLaptop.length}</span>
           </div>
                     <div className="card bg-white flex items-center justify-between md:w-60 w-full p-5 rounded-lg border-l-4 border-secondary">
             <p>جوالات</p>
-            <span>60</span>
+            <span>{filterProductsMobile.length}</span>
           </div>
                     <div className="card bg-white flex items-center justify-between md:w-60 w-full p-5 rounded-lg border-l-4 border-secondary">
             <p>شاشات</p>
-            <span>100</span>
+            <span>{filterProductsScreen.length}</span>
           </div>
                               <div className="card bg-white flex items-center justify-between md:w-60 w-full p-5 rounded-lg border-l-4 border-secondary">
             <p>سماعات</p>
-            <span>150</span>
+            <span>{filterProductsEarphone.length}</span>
+          </div>
+                                        <div className="card bg-white flex items-center justify-between md:w-60 w-full p-5 rounded-lg border-l-4 border-secondary">
+            <p>ساعات</p>
+            <span>{filterProductsHour.length}</span>
           </div>
                               <div className="card bg-white flex items-center justify-between md:w-60 w-full p-5 rounded-lg border-l-4 border-secondary">
             <p>أخرى</p>
-            <span>150</span>
+            <span>{filterProductsAnother.length}</span>
           </div>
 
           </div>

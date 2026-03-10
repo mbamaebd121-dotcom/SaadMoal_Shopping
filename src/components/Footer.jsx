@@ -3,7 +3,9 @@ import { NavLink } from "react-router-dom";
 
 function Footer() {
   return (
-    <footer className="lg:ml-50 bg-gray-900 text-white rounded-t-4xl px-4 py-4">
+
+    <>
+        <footer className="lg:ml-50 bg-gray-900 text-white rounded-t-4xl px-4 py-4">
       <div className="max-w-7xl mx-auto">
         {/* القسم الرئيسي */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 py-8 border-b border-gray-800">
@@ -147,6 +149,8 @@ function Footer() {
         </div>
       </div>
     </footer>
+    
+    </>
   );
 }
 
