@@ -1,10 +1,13 @@
 import { useProducts } from "../hooks/useProducts";
+import { useCart } from "../hooks/useCart";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import Button from "../components/Button";
 
 function ProductDetails() {
 
   const { products, activeProductDetails } = useProducts();
+  const {handelerAddTocart} = useCart()
   const navigate = useNavigate();
   const [favorite,setFavorite] = useState(false)
 
@@ -65,13 +68,13 @@ function ProductDetails() {
               <i className="fa-solid fa-star"></i>
               <i className="fa-regular fa-star"></i>
 
-              <span className="text-gray-500 text-sm ml-2">(120 reviews)</span>
+              
 
             </div>
 
             {/* السعر */}
-            <div className="text-3xl font-bold text-green-600 mb-5">
-              ${activeProduct.price}
+            <div className="text-3xl font-bold text-secondary mb-5">
+              {activeProduct.price}ريال
             </div>
 
             {/* الوصف */}
@@ -84,15 +87,15 @@ function ProductDetails() {
             <div className="bg-gray-50 p-4 rounded-lg mb-6">
 
               <p className="text-sm text-gray-600">
-                📦 Free shipping worldwide
+                📦 منتج رائع
               </p>
 
               <p className="text-sm text-gray-600">
-                🔄 30 day return guarantee
+                🔄 30 سياسة استرجاع
               </p>
 
               <p className="text-sm text-gray-600">
-                ⚡ Fast delivery
+                ⚡ توصيل سريع
               </p>
 
             </div>
@@ -101,31 +104,36 @@ function ProductDetails() {
 
 
           {/* الأزرار */}
-          <div className="flex gap-4">
+          <div className="flex gap-4 items-center ">
 
             {/* Add To Cart */}
-            <button className="flex-1 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg shadow-md transition transform hover:scale-105">
-              🛒 Add To Cart
-            </button>
+            <Button
+            name='إضافة إلى السلة'
+            variant="primary"
+            icon='fa-solid fa-cart-plus'
+            onClick={()=>handelerAddTocart(activeProduct.name,activeProduct.image_url,activeProduct.description,activeProduct.price,activeProduct.id)}
+
+            />
 
 
             {/* Favorite */}
             <button
               onClick={()=>setFavorite(!favorite)}
-              className={`px-5 rounded-lg border transition 
-              ${favorite ? "bg-red-500 text-white" : "bg-white"}`}
+              className={`p-2 px-5 rounded-lg  transition  cursor-pointer
+              ${favorite ? "bg-red-500  text-white" : "bg-gray-100"} hover:bg-red-500 hover:text-white`}
             >
-              ❤️
+             <i class="fa-solid fa-heart"></i>
             </button>
 
 
             {/* Back */}
-            <button
-              onClick={()=>navigate("/products")}
-              className="border px-5 rounded-lg hover:bg-gray-100 transition"
+            <div className="btn-back rounded-lg  transition  cursor-pointer hover:bg-gray-100 p-2 "
+            onClick={()=>navigate('/products')}
             >
-              ⬅
-            </button>
+              <i class="fa-solid fa-arrow-left text-2xl"></i>
+
+            </div>
+            
 
           </div>
 
