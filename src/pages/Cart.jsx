@@ -12,14 +12,14 @@ function Cart() {
   }, 0);
 
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex  flex-col h-screen">
       {carts.length === 0 ? (
         <div className="flex flex-1 justify-center items-center gap-2">
           <p>السلة فارغة</p>
           <i className="fa-solid fa-cart-shopping text-blue-800"></i>
         </div>
       ) : (
-        <div className="flex flex-col flex-1 relative overflow-hidden min-h-0">
+        <div className="flex flex-col md:mx-10 flex-1 relative overflow-hidden min-h-0">
           {/* العنوان */}
           <div className="text-center py-3 text-lg font-semibold">السلة</div>
 
@@ -32,14 +32,14 @@ function Cart() {
             <i className="fa-solid fa-trash-can"></i> */}
 
           {/* العناصر — هنا فقط السكرول */}
-          <div className=" overflow-y-auto px-5 py-3 flex flex-col items-center gap-3">
+          <div className=" overflow-y-auto  py-3 flex flex-col items-center gap-3">
             {carts.map((item) => (
               <CartItem key={item.id} {...item} />
             ))}
           </div>
 
           {/* الإجمالي + زر الدفع */}
-          <div className="md:p-2 py-2 md:bg-white mx-5 flex  justify-center">
+          <div className="md:p-2 py-2 md:bg-white  flex  justify-center">
             <div className="container w-70   md:w-full  bg-white">
               <div className="flex justify-between  ">
                 <span>الإجمالي</span>

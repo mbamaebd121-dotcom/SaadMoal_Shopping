@@ -9,7 +9,7 @@ function Home() {
 
   return (
     <>
-      <div className="home md:mx-25 flex bg-white flex-col gap-3">
+      <div className="home md:mx-10 flex bg-white flex-col gap-3">
         <Hero />
         <div className="section-products flex flex-col items-center p-2 gap-3">
           <div className="title flex items-center gap-3  pb-1">
@@ -37,7 +37,7 @@ function Home() {
             </div>
           )}
           {!error && !loading && filterProducts.length !== 0 && (
-            <div className="container-card flex flex-wrap justify-center gap-2  rounded-md  p-4">
+            <div className="container-card flex flex-wrap justify-center gap-2  rounded-md  ">
               {filterProducts.map((item, index) => (
                 <ProductCard
                   key={index}

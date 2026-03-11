@@ -1,7 +1,7 @@
 function About() {
   return (
     <>
-      <div className="about bg-white grid justify-center md:justify-start gap-5 p-4 rounded-md lg:mx-10 ">
+      <div className="about bg-white grid justify-center md:justify-start gap-5 p-4 rounded-md md:mx-10 ">
         <div className="info_about_section border-b border-gray-200 py-2">
           <div className="title font-bold text-lg ">من نحن ؟</div>
           <span className=" w-15 h-0.5 flex bg-accent"></span>

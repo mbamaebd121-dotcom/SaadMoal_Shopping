@@ -17,7 +17,7 @@ function Products() {
   return (
     <>
    
-          <div className="products md:mx-25 rounded-md flex flex-col gap-5 bg-white">
+          <div className="products md:mx-10 rounded-md flex flex-col gap-5 bg-white">
       <div className="title font-bold border-b border-gray-200 p-4">
         قائمة المنتجات
         </div>

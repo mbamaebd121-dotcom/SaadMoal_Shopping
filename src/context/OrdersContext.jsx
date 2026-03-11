@@ -48,7 +48,7 @@ const addOrder = (cartItems) => {
 
   const selectActiveOrder = (id)=>{
     setActiveShowOrder(id);
-    navigate('/orderDetiles')
+    navigate('/order-details')
     
   }
 

@@ -25,7 +25,7 @@ function AppRoutes() {
         <Route path="/checkOut" element={<Checkout />} />
         <Route path="/help" element={<Help />} />
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/orderDetiles" element={<OrderCardDetiles />} />
+        <Route path="/order-details" element={<OrderCardDetiles />} />
         <Route path="/products-details" element={<ProductDetails/>}/>
       </Routes>
     </div>

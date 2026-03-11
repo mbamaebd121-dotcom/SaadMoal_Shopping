@@ -10,7 +10,7 @@ function Orders() {
 
   return (
     <>
-      <div className="order flex flex-col bg-white gap-3 py-2">
+      <div className="order md:mx-10 flex flex-col bg-white gap-3 py-2">
         <div className="title-page flex justify-center gap-5 items-center">
           <p className="font-bold"> قائمة الطلبات</p>
           <i class="fa-solid fa-clipboard-list text-blue-800"></i>
@@ -51,6 +51,7 @@ function Orders() {
                     order_number={item.order_number}
                     short_description={item.short_description}
                     date={item.date}
+                    id={item.id}
                   />
                 ))}
             </div>
@@ -73,7 +74,8 @@ function Orders() {
                     order_number={item.order_number}
                     short_description={item.short_description}
                     date={item.date}
-                    order_cart={item.cart}
+                    id={item.id}
+
                   />
                 ))}
             </div>
