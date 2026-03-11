@@ -37,7 +37,7 @@ function Products() {
           </select>
         </div>
         <div className="search ">
-          <InputSearch placeholder='ايحث عن منتج ...' width='md:w-50 lg:w-70 w-70 xl:w-100'/>
+          <InputSearch placeholder='ايحث عن منتج ...' width='md:w-50 lg:w-70 w-50 xl:w-100'/>
 
         </div>
         
