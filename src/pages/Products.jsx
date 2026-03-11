@@ -25,18 +25,19 @@ function Products() {
               <div className="fliter-products gap-3  lg:flex flex-wrap grid justify-center md:items-center px-4 py-3 lg:justify-between border-b-2 border-gray-200">
         <div className="select flex items-center gap-1">
           <p>التصنيف</p>
-          <select name="" id="" className="w-50 lg:w-30 md:w-50 xl:w-60 p-1  rounded-2xl bg-gray-100 ">
+          <select name="" id="" className="w-50 lg:w-30 md:w-50 xl:w-60 p-1 px-5  rounded-2xl bg-gray-100 ">
             <option value="all" className="p-2">الكل</option>
             <option value="mobile" className="p-2">جوالات</option>
             <option value="laptop" className="p-2">لابتوب</option>
             <option value="tv" className="p-2">شاشات</option>
             <option value="hour" className="p-2">ساعات</option>
             <option value="earphone" className="p-2">سماعات</option>
+            <option value="another" className="p-2">أخرى</option>
 
           </select>
         </div>
         <div className="search ">
-          <InputSearch placeholder='ايحث عن منتج ...' width='md:w-50 lg:w-70 w-70 xl:w-100'/>
+          <InputSearch placeholder='ايحث عن منتج ...' width='md:w-50 lg:w-70 w-65 xl:w-100'/>
 
         </div>
         

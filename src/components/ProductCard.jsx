@@ -5,12 +5,13 @@ import Button from "./Button";
 
 function ProductCard({ image_url, name, description, price, is_active, id }) {
   const { handelerAddTocart } = useCart();
-  const {showProductDetails} = useProducts();
+  const { showProductDetails } = useProducts();
 
   return (
     <>
-      <div className="card product w-60 h-90 bg-white shadow-md rounded-b-2xl relative border-transparent hover:-translate-y-1 border-2 hover:border-secondary transition duration-700 cursor-pointer"
-      onClick={()=>showProductDetails(id)}
+      <div
+        className="card product w-60 h-90 bg-white shadow-md rounded-b-2xl relative border-transparent hover:-translate-y-1 border-2 hover:border-secondary transition duration-700 cursor-pointer"
+        onClick={() => showProductDetails(id)}
       >
         <div className="avalible absolute left-1 top-0">
           {!is_active && (
@@ -44,30 +45,18 @@ function ProductCard({ image_url, name, description, price, is_active, id }) {
                   <i class="fa-solid fa-star w-10 text-yellow-400"></i>
                 ))}
             </div>
-           
           </div>
 
           <div
             className="btnAdd cursor-pointer rounded bg-accent w-10 text-white text-center"
-            onClick={(e) =>
-            {
-              
-              handelerAddTocart(name, image_url, description, price, id)
-              e.stopPropagation()
-
-            }
-          }
+            onClick={(e) => {
+              handelerAddTocart(name, image_url, description, price, id);
+              e.stopPropagation();
+            }}
           >
             <span></span>
             <i class="fa-solid fa-cart-plus"></i>
           </div>
-          {/* <Button
-          name='إضافة إلى السلة'
-          variant="primary"
-          onClick={()=>handelerAddTocart(name, image_url, description, price, id)}
-          
-          /> */}
-
         </div>
       </div>
     </>
