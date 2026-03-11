@@ -22,7 +22,7 @@ function Products() {
         قائمة المنتجات
         </div>
 
-              <div className="fliter-products gap-3  lg:flex flex-wrap grid justify-center md:items-center px-4 py-3 lg:justify-between border-b-2 border-gray-200">
+              <div className="fliter-products gap-3 bg-red-300 lg:flex flex-wrap grid justify-center md:items-center md:px-4 px-1 py-3  lg:justify-between border-b-2 border-gray-200">
         <div className="select flex items-center gap-1">
           <p>التصنيف</p>
           <select name="" id="" className="w-50 lg:w-30 md:w-50 xl:w-60 p-1 px-5  rounded-2xl bg-gray-100 ">
@@ -36,7 +36,7 @@ function Products() {
 
           </select>
         </div>
-        <div className="search ">
+        <div className="search flex justify-center bg-red-500">
           <InputSearch placeholder='ايحث عن منتج ...' width='md:w-50 lg:w-70 w-50 xl:w-100'/>
 
         </div>
