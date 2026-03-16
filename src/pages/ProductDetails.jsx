@@ -24,24 +24,19 @@ function ProductDetails() {
   if (!activeProduct) return null;
 
   return (
-    <div className="min-h-screen bg-gray-100 py-10 px-5">
+    <div className="min-h-screen  py-10 grid justify-center md:px-5">
 
-      <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl p-8 grid md:grid-cols-2 gap-10">
+      <div className="">
 
         {/* الصور */}
-        <div>
+        <div className="">
 
-          <div className="bg-gray-50 rounded-xl flex items-center justify-center p-10 relative">
-
-            {/* Badge */}
-            <span className="absolute top-4 left-4 bg-red-500 text-white text-sm px-3 py-1 rounded-full">
-              NEW
-            </span>
+          <div className=" rounded-xl  flex items-center justify-center  md:p-10 relative">
 
             <img
               src={activeProduct.image_url}
               alt={activeProduct.name}
-              className="w-96 h-96 object-contain hover:scale-105 transition duration-300"
+              className="md:w-full h-70 md:h-96 object-contain hover:scale-105 transition duration-300"
             />
 
           </div>
@@ -104,7 +99,7 @@ function ProductDetails() {
 
 
           {/* الأزرار */}
-          <div className="flex gap-4 items-center ">
+          <div className="flex md:gap-4 gap-0.5 items-center ">
 
             {/* Add To Cart */}
             <Button

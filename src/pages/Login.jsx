@@ -74,7 +74,7 @@ return (
 <Button
   name="تسجيل الدخول"
   onClick={handleLogin}
-  variant="secondary"
+  variant="primary"
   icon="fa-solid fa-right-to-bracket"
 />
 

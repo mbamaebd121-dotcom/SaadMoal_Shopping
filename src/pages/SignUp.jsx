@@ -70,9 +70,9 @@ className="w-80 md:w-110 h-120 absolute top-10 shadow-md rounded-2xl bg-white pt
         />
     </div>
   <Button
-    name="تسجيل الدخول"
+    name="إنشاء حساب"
     onClick={handleRegister}
-    variant="secondary"
+    variant="primary"
     icon="fa-solid fa-right-to-bracket" // أيقونة اختيارية
   />
     <div className="route flex gap-2 font-medium">
