@@ -2,6 +2,7 @@ import { useProducts } from "../hooks/useProducts";
 import { useCart } from "../hooks/useCart";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import ProductCard from '../components/ProductCard'
 import Button from "../components/Button";
 
 function ProductDetails() {
@@ -10,7 +11,7 @@ function ProductDetails() {
   const {handelerAddTocart} = useCart()
   const navigate = useNavigate();
   const [favorite,setFavorite] = useState(false)
-
+  
   useEffect(() => {
     if (activeProductDetails === null) {
       navigate("/products");
@@ -20,6 +21,7 @@ function ProductDetails() {
   const activeProduct = products.find(
     (item) => item.id === activeProductDetails
   );
+  const sameProducts = products.filter(item=>item.category === activeProduct.category && item.id !== activeProduct.id )
 
   if (!activeProduct) return null;
 
@@ -134,6 +136,40 @@ function ProductDetails() {
 
         </div>
 
+      </div>
+      <div className="sameProducts mt-10 ">
+        <div className="title text-xl">
+          <h1>منتجات مشابهه</h1>
+          <span className="border border-accent flex w-30 "></span>
+        </div>
+        <div className="container p-10">
+          {sameProducts.length === 0 ? (
+            <p className="text-center">لاتوجد منتجات مشابهة</p>
+
+          ):(
+            <div className="flex flex-wrap gap-2 ">
+                                    {sameProducts.map((item,index)=>(
+                      <ProductCard key={index}
+          image_url={item.image_url}
+          name={item.name}
+          description={item.description}
+          price={item.price}
+          is_active={item.is_active}
+          id={item.id}
+                 />
+
+          ))}
+            </div>
+
+          
+          )}
+
+
+          
+          
+   
+
+        </div>
       </div>
 
     </div>
