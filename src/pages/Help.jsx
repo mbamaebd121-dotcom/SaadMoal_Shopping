@@ -27,27 +27,7 @@ function Help() {
         </div>
 
       </div>
-              <div className="contact-section bg-blue-800 text-gray-100 text-sm px-3 py-5 rounded-b-2xl grid gap-5 lg:mx-10">
 
-          <div className="title font-bold text-lg">
-           <p>خدمة العملاء</p>
-          <span className="h-0.5 w-20 flex bg-accent"></span>
-          </div>
-          <div className="info grid gap-5 ">
-            <h3>للمزيد من التفاصيل يرجى التواصل مع خدمة العملاء عبر الارقام التالية :</h3>
-            <div className="phoneNumber flex flex-wrap gap-2  ">
-              <div className="container bg-white rounded-md p-1 w-50 flex items-center justify-between  border-gray-400 border transition duration-500 cursor-pointer">
-                <p className="text-black">777424312</p>
-                <i class="fa-solid fa-square-phone text-2xl text-accent rounded bg-white font-bold"></i>
-              </div>
-                            <div className="container bg-white rounded-md p-1 w-50 flex items-center justify-between border-gray-400 transition duration-500 border  cursor-pointer">
-                <p className="text-black">777426662</p>
-                <i class="fa-solid fa-square-phone text-2xl text-accent rounded bg-white font-bold"></i>
-              </div>
-              
-            </div>
-          </div>
-        </div>
     </>
   );
 }
