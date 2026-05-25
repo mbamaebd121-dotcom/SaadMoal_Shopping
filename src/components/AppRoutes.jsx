@@ -14,7 +14,7 @@ import ProductDetails from "../pages/ProductDetails";
 
 function AppRoutes() {
   return (
-    <div className="mt-16 lg:ml-50 py-5 px-5 md:px-10 bg-gray-100 min-h-screen">
+    <div className="mt-16 py-5 px-5 md:px-10 bg-gray-100 min-h-screen">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />

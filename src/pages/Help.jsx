@@ -22,6 +22,7 @@ function Help() {
                 id={item.id}
                 active={item.active}
               />
+              
             ))}
           </ul>
         </div>
